@@ -11,6 +11,22 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Hai Employee!</div>
+        <div>
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Nama Depan                   :</h6> <h4 th:text="${pegawai.firstName}"></h4>
+            </div>
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Nama Belakang                  :</h6> <h4 th:text="${pegawai.lastName}"></h4>
+            </div>
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">ID                     :</h6><h4 th:text="${pegawai.id}"></h4>
+            </div>
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Department             :</h6><h4 th:text="${pegawai.department.name}"></h4>
+            </div>
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Total Sertifikasi      :</h6><h4 th:text="${total}"></h4>
+            </div>
+        </div>
     </body>
 </html>

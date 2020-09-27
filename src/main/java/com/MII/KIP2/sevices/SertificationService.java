@@ -5,6 +5,10 @@
  */
 package com.MII.KIP2.sevices;
 
+import com.MII.KIP2.entities.Sertification;
+import com.MII.KIP2.repositories.SertificationRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,5 +17,31 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class SertificationService {
-    
+
+    @Autowired
+    SertificationRepository sertification;
+
+    public List<Sertification> getAll() {
+        return sertification.findAll();
+    }
+
+    public List<Sertification> showToEmp() {
+        return sertification.showToEmp();
+    }
+
+    public List<Sertification> getbyIdEmp(int id) {
+        return sertification.findByIdEmp(id);
+    }
+//
+//    public void deleteKip(String serti, int emp) {
+//        sertification.deleteKip(serti, emp);
+//    }
+
+    public int sertiNow(int id){
+        return sertification.sertiNow(id);
+    }
+    public void saveSerti(Sertification s) {
+        sertification.save(s);
+    }
+
 }

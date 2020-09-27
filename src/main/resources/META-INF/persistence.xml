@@ -8,11 +8,11 @@
     <class>com.MII.KIP2.entities.Employee</class>
     <class>com.MII.KIP2.entities.JobHistory</class>
     <class>com.MII.KIP2.entities.Department</class>
-    <class>com.MII.KIP2.entities.Sertification</class>
     <class>com.MII.KIP2.entities.Request</class>
     <class>com.MII.KIP2.entities.Country</class>
     <class>com.MII.KIP2.entities.Accounts</class>
     <class>com.MII.KIP2.entities.Status</class>
+    <class>com.MII.KIP2.entities.Sertification</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_hr_herul?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

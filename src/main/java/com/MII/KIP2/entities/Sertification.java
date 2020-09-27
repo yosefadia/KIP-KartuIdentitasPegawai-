@@ -6,18 +6,14 @@
 package com.MII.KIP2.entities;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -60,8 +56,6 @@ public class Sertification implements Serializable {
     @Basic(optional = false)
     @Column(name = "quota")
     private int quota;
-    @ManyToMany(mappedBy = "sertificationList", fetch = FetchType.LAZY)
-    private List<Employee> employeeList;
 
     public Sertification() {
     }
@@ -134,15 +128,6 @@ public class Sertification implements Serializable {
 
     public void setQuota(int quota) {
         this.quota = quota;
-    }
-
-    @XmlTransient
-    public List<Employee> getEmployeeList() {
-        return employeeList;
-    }
-
-    public void setEmployeeList(List<Employee> employeeList) {
-        this.employeeList = employeeList;
     }
 
     @Override
