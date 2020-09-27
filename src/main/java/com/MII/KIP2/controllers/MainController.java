@@ -75,7 +75,7 @@ public class MainController {
                     return "redirect:/adminpage";
                 }
             } else {
-                model.addAttribute("loginEror", true);
+                model.addAttribute("loginError", true);
                 return "index";
             }
         } else {
