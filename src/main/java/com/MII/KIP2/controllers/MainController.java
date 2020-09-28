@@ -53,11 +53,20 @@ public class MainController {
         int Id = Integer.parseInt(id);
         mav.addObject("serti", new Sertification());
         mav.addObject("total", sertificationService.sertiNow(Id));
-        mav.addObject("sertiff", sertificationService.getbyIdEmp(Id));
+        //mav.addObject("sertiff", sertificationService.getbyIdEmp(Id));
         mav.addObject("pegawai", employeeService.getById(Id));
-        model.addAttribute("sertifikat", sertificationService.showToEmp());
+        //model.addAttribute("sertifikat", sertificationService.showToEmp());
         return mav;
     }
+    
+    @GetMapping("/jadwal/{id}")
+    public String jadwal(@PathVariable(name = "id") String id, Model model){
+        int Id = Integer.parseInt(id);
+        model.addAttribute("sertiff", sertificationService.getbyIdEmp(Id));
+        model.addAttribute("pegawai", employeeService.getById(Id));
+        model.addAttribute("sertifikat", sertificationService.showToEmp());
+        return "jadwal";
+}
 
     //mengecek isi dari form login, apakah udah sesuai dengan database
     @RequestMapping("/check")

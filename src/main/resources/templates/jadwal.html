@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <div class="card-body">
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Kode</th>
+                                                <th>Nama</th>
+                                                <th>Ruang</th>
+                                                <th>Hari</th>
+                                                <th>Jam</th>
+                                                <th>SKS</th>
+                                                <th>Pengajar</th>
+                                                <th>Actions</th> 
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr th:each="sertiff : ${sertiff}" method="GET">
+                                                <td th:text="${sertiff.id}"></td>
+                                                <td th:text="${sertiff.name}"></td>
+                                                <td th:text="${sertiff.room}"></td>
+                                                <td th:text="${sertiff.day}"></td>
+                                                <td th:text="${sertiff.time}"></td>
+                                                <td th:text="${sertiff.teacher}"></td>
+                                                <td th:text="${sertiff.quota}"></td>
+                                                <td>
+                                                    <!--<a th:href="@{'/update/' + ${matkul.id}}">Update</a>-->
+                                                    <button th:attr="onclick=|fungsi('${sertiff.id}','${pegawai.id}');|">Delete</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+    </body>
+</html>
